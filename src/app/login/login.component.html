@@ -1,0 +1,54 @@
+<div class="col-md-12 w-100">
+
+
+    <div class="alert alert-success" *ngIf=" isSuccessfull">
+        عضویت موفقیت آمیز بود
+    </div>
+
+    <div class="card card-container">
+        <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+            <div class="mx-1"> <label for="email"> نام کاربری  (ایمیل ) </label>
+                <input type="text" class="form-control" name="email" formControlName="email" required minlength="3" /></div>
+
+            <small *ngIf="f.email.errors?.required && f.email.touched" class="form-text custom-invalid-feedback alert alert-danger">نام  نمی تواند خالی باشد</small>
+            <small *ngIf="f.email.errors?.minlength && f.email.touched" class="form-text custom-invalid-feedback alert alert-danger">نام  بشتر از 3 کلمه باشد</small>
+
+
+
+
+
+            <div class="form-group">
+                <label for="password">رمز عبور</label>
+                <input type="password" class="form-control" name="password" formControlName="password" required minlength="6" />
+            </div>
+            <small *ngIf="f.password.errors?.required && f.password.touched" class="form-text custom-invalid-feedback alert alert-danger">رمز عبور نمی تواند خالی باشد</small>
+            <small *ngIf="f.password.errors?.minlength && f.password.touched" class="form-text custom-invalid-feedback alert alert-danger">رمز عبور حداقل 6 کاراکتر است</small>
+
+
+
+            <div class="form-group ">
+                <button class="btn btn-primary btn-block" [disabled]="!(form.valid)">ورود</button>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="">
+                Signup failed!<br /> errorMessage
+            </div>
+
+        </form>
+
+
+        <a href=""> فراموشی  رمز ورود</a>
+
+
+    </div>
+
+
+    <div class="alert alert-danger" *ngIf="isWrong">
+        نام کاربری یا رمز عبور نادرست است </div>
+
+    <div class="alert alert-success" *ngIf="isSuccessfull">
+        registeration complete </div>
+</div>

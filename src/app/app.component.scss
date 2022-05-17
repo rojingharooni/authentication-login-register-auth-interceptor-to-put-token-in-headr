@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    background-color: rgba(199, 197, 197, 0.747);
+    //  border-bottom: 1px rgba(94, 94, 94, 0.41) solid;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    color: white;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0.25rem 0.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: #ffffff;
+}
+
+.logo {
+    align-self: center;
+    position: absolute;
+    right: 50%;
+}
+
+app-info-p1 {
+    width: 100%;
+}
